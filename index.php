@@ -51,7 +51,7 @@ while($waipu = mysqli_fetch_assoc($data)): ?>
 </div>
 <div>
 <?php foreach ($wife as $wifes): ?>
-<img src="pict/<?php echo $wifes ?>" alt="">
+<img src="pict/<?php echo $wifes ?>" alt="pict/<?php echo $wifes ?>">
 <?php endforeach ?>
 </div>
 
