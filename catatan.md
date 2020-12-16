@@ -1,0 +1,1 @@
+![rita](pict/rita.jpg)
