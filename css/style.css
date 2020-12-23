@@ -1,4 +1,42 @@
-body {}
+@media (min-width: 576px) {
+    .kolom {
+        column-count: 2;
+        /* menentukan jumlah kolom */
+        column-gap: 2%;
+        /*mengatur jarak antar kolom */
+    }
+}
+
+@media (min-width: 768px) {
+    .kolom {
+        column-count: 2;
+        /* menentukan jumlah kolom */
+        column-gap: 2%;
+        /*mengatur jarak antar kolom */
+    }
+}
+
+@media (min-width: 992px) {
+    .kolom {
+        column-count: 3;
+        /* menentukan jumlah kolom */
+        column-gap: 2%;
+        /*mengatur jarak antar kolom */
+    }
+}
+
+@media (min-width: 1200px) {
+    .kolom {
+        column-count: 4;
+        /* menentukan jumlah kolom */
+        column-gap: 2%;
+        /*mengatur jarak antar kolom */
+    }
+}
+
+body {
+    background-color: #ffffff;
+}
 
 p {
     color: aquamarine;
@@ -6,4 +44,14 @@ p {
 
 .twaipu {
     width: 100%;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+
+.clear {
+    margin-top: 1%;
 }
