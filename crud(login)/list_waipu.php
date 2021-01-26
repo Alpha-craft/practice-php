@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(!$_SESSION["login"]){ //jika belum login
+
+    // paksa untu login
+    header("Location:login.php");
+    exit;
+}
 include "koneksi.php";
 $result = mysqli_query($conn,"SELECT * FROM list_waipu ");
 
@@ -21,6 +28,7 @@ if (isset($_POST["cari"])){
 </head>
 
 <body>
+    <a href="logout.php">logout</a>
     <h2>Cari Waipu</h2>
     <form action="" method="post">
         <input type="text" autofocus placeholder="Masukkan nama waipu..." name="keyword">

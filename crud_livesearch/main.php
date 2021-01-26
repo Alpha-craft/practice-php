@@ -9,25 +9,27 @@ if( isset ($_POST['submit'])){
     $nama = htmlspecialchars( $_POST["nama"]);// htmlspecialchars untuk parse dari html
     $anime = htmlspecialchars( $_POST["anime"]);
     // $pict
-    $namafile = $_FILES["pict"]["name"];
+    $nama_file = $_FILES["pict"]["name"];
     $ukuranfile = $_FILES["pict"]["size"];
     $emror = $_FILES["pict"]["error"];
     $tmp = $_FILES["pict"]["tmp_name"];
     $ekstensi = ["jpg","jpeg","gif","png"];
-    $ekstensigambar = explode(".",$namafile);
+    $ekstensigambar = explode(".",$nama_file);
     $ekstensigambar = strtolower( end($ekstensigambar));
     if (!in_array($ekstensigambar,$ekstensi)){
         echo "Yang anda Upload Bukan gambar";
         return false;
     }
-
+    $nama_file = uniqid(); //agar nama file menjadi random
+    $nama_file .= '.';
+    $nama_file .= $ekstensigambar;
     //setelah gambar sudah dicek maka tinggal upload
-    move_uploaded_file($tmp,"pict/".$namafile);
+    move_uploaded_file($tmp,"pict/".$nama_file);
         
 
 
     //query insert data
-    $query = "INSERT INTO list_waipu VALUES (null,'$nama','$anime','$namafile')";
+    $query = "INSERT INTO list_waipu VALUES (null,'$nama','$anime','$nama_file')";
     mysqli_query($conn,$query);
     $tukang_cek = mysqli_affected_rows($conn);
     if ($tukang_cek > 0){
